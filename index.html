@@ -128,32 +128,32 @@
     </header>
 
 
-    <!-- <section class="s1a"> -->
-        <!-- <div class="container">
-            <div>
-                <img src="tigernut.jpg" alt="" style="width:100%">
-            </div>
-            <div>
-                <img src="cashew-apple.jpg" alt="" style="width:100%">
-            </div>
-            <div>
-                <img src="cocoa.jpg" alt="" style="width:100%">
-            </div>
-            <div>
-                <img src="palmoil.jpg" alt="" style="width:100%">
-            </div>       
-            
-            <!-- Next and previous buttons -->
-            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div> -->
-    <!-- </section> -->
+    <section id="s1a">
+        <div id="slideshow-example" data-component="slideshow">
+            <div role="list">
+                <div>
+                    <img src="tigernutss.jpg" alt="" style="width:100%">
+                </div>
+                <div class="slide">
+                    <img src="cashew-apple.jpg" alt="" style="width:100%">
+                </div>
+                <div class="slide">
+                    <img src="cocoa.jpg" alt="" style="width:100%">
+                </div>
+                <div class="slide">
+                    <img src="palmoil.jpg" alt="" style="width:100%">
+                </div>  
+                <div class="slide">
+                    <img src="peanuts.jpg" alt="" style="width:100%">
+                </div>     
+            </div>    
+        </div>
 
-    <section class="s1b">
         <div class="header1">
             <img id="img-id" src="export.png" alt="" style="width:100%">
         </div>
     </section>
+
 
     <section id="about-id" class="s2">
         <H2>About Us</H2>
@@ -228,10 +228,8 @@
                         <img class="thumbnail" src="cashew-apple.jpg" alt="">
                         <div class="card-container">
                             <h6 id="product-name"><b>Cashew</b></h6>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                View 
-                            </button> -->
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="cashew.html">View</a>
+                        
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">View</a>
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -241,7 +239,6 @@
                                         <div>
                                             <img id="about-img" src="cashew-apple.jpg" alt=""">
                                         </div>    
-                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                                     </div>
                                     <h5 class="modal-title" id="exampleModalLabel">Cashew Nuts</h5>
                                     <div class="modal-body">
@@ -261,8 +258,6 @@
                                         <!-- </div> -->
                                     </div>
                                     <div class="modal-footer">
-                                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button> -->
-                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                                     </div>
                                 </div>
                                 </div>
@@ -388,39 +383,40 @@
         </div>
     </section>
 
-    <!-- <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <img id="about-img" src="cashew-apple.jpg" alt=""">
-                </div>
-              <!-- <h5 class="modal-title">Modal title</h5> -->
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            <!-- </div>
-            <div class="modal-body">
-                <p>Nigeria is a major and growing player in the cashew industry with 
-                    rising market share in global cashew production, with an annual 
-                    average production increase of 5%. Production is projected to go only 
-                    one way upwards. By 2030, we will produce 300,000 metric tonnes of cashew.</p>
-                
-                    <p>We have a relatively long cashew producing season, December to June. 
-                    Cashew is stored, so exporting goes on all year around. Supply is therefore 
-                    guaranteed. All exporting companies comply with most important food safety 
-                    standards (SPS). Adherence to best practices and food safety at all steps 
-                    in the value chain (farmer àmerchant à processor à exporter) Nigerian cashew
-                    boast excellent qualities such as good nut count, high kernel output ratio,
-                    excellent moisture content and less defective nuts.</p>                
-                </div>
-            </div> -->
-            <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
-          <!-- </div>
-        </div>
-      </div> -->
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#product-id" class="nav-link px-2 text-muted">Products</a></li>
+            <li class="nav-item"><a href="#about-id" class="nav-link px-2 text-muted">About Us</a></li>
+            <li class="nav-item"><a href="#contact-id" class="nav-link px-2 text-muted">Get a quote</a></li>
+          </ul>
+          <p class="text-center text-muted">&copy; 2022 AgricExport ltd.</p>
+        </footer>
+      </div>
 
+    <script>
+        var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+        slideshows.forEach(initSlideShow);
+
+        function initSlideShow(slideshow) {
+
+            var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+
+            var index = 0, time = 5000;
+            slides[index].classList.add('active');
+
+            setInterval( () => {
+                slides[index].classList.remove('active');
+                
+                index++;
+                if (index === slides.length) index = 0;
+
+                slides[index].classList.add('active');
+
+            }, time);
+        }
+    </script>  
 </body>
 </html>
